@@ -1,0 +1,12 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="navia-grad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4d7cff"/>
+      <stop offset="55%" stop-color="#9b5cff"/>
+      <stop offset="100%" stop-color="#ff5cb8"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="url(#navia-grad)"/>
+  <path d="M25 20L41 32L25 44V20Z" fill="white"/>
+  <circle cx="47" cy="18" r="3.4" fill="white"/>
+</svg>
