@@ -29,18 +29,49 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---------- standalone pricing calculator ---------- */
-  const calcRoot = document.querySelector('[data-calc]');
-  if (calcRoot) {
-    const priceMap = { '60': 40, '120': 60 };
-    const options = calcRoot.querySelectorAll('input[name="calc-duration"]');
-    const priceEl = calcRoot.querySelector('[data-calc-price]');
-    const updatePrice = () => {
-      const checked = calcRoot.querySelector('input[name="calc-duration"]:checked');
-      if (checked && priceEl) priceEl.textContent = priceMap[checked.value] + ' €';
+  /* ---------- portfolio lightbox (video + source photo) ---------- */
+  const lightbox = document.querySelector('#lightbox');
+  if (lightbox) {
+    const inner = lightbox.querySelector('.lightbox-inner');
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+
+    const closeLightbox = () => {
+      lightbox.classList.remove('open');
+      document.body.classList.remove('no-scroll');
+      inner.innerHTML = '';
     };
-    options.forEach(o => o.addEventListener('change', updatePrice));
-    updatePrice();
+
+    const openLightbox = (type, src, alt) => {
+      inner.innerHTML = '';
+      let el;
+      if (type === 'video') {
+        el = document.createElement('video');
+        el.controls = true;
+        el.autoplay = true;
+        el.playsInline = true;
+        el.preload = 'auto';
+      } else {
+        el = document.createElement('img');
+        el.alt = alt || '';
+      }
+      el.src = src;
+      inner.appendChild(el);
+      lightbox.classList.add('open');
+      document.body.classList.add('no-scroll');
+      closeBtn.focus();
+    };
+
+    document.querySelectorAll('[data-lightbox]').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        openLightbox(trigger.dataset.lightbox, trigger.dataset.src, trigger.getAttribute('aria-label'));
+      });
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+    });
   }
 
   /* ---------- multi-step order form ---------- */
@@ -50,14 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressFill = document.querySelector('.progress-fill');
     const progressLabel = document.querySelector('[data-progress-label]');
     let current = 0;
-
-    const priceMap = { '60': 40, '120': 60 };
-    const priceOut = form.querySelector('[data-form-price]');
-    form.querySelectorAll('input[name="duree"]').forEach(r => {
-      r.addEventListener('change', () => {
-        if (priceOut) priceOut.textContent = priceMap[r.value] + ' €';
-      });
-    });
 
     function showStep(i) {
       steps.forEach((s, idx) => s.classList.toggle('active', idx === i));

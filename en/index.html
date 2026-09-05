@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NAVIA — Personalized AI Videos for Birthdays & Special Occasions</title>
-<meta name="description" content="Give a custom AI video for a birthday, wedding, or retirement. You send an idea and photos, NAVIA handles everything else — delivered within 2 days.">
+<meta name="description" content="Give a custom AI video for a birthday, wedding, or retirement. You send an idea and photos, NAVIA handles everything else — delivered within 3 days.">
 <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -39,14 +39,14 @@
       <div>
         <div class="eyebrow">Custom AI videos</div>
         <h1>Give an <span class="gradient-text">emotion</span>, not just a gift.</h1>
-        <p class="lead">An AI-generated video made for someone you love — birthday, wedding, retirement. You send an idea and photos, I handle the subscriptions, the trial-and-error and the editing. Delivered within 2 days.</p>
+        <p class="lead">An AI-generated video made for someone you love — birthday, wedding, retirement. You send an idea and photos, I handle the subscriptions, the trial-and-error and the editing. Delivered within 3 days.</p>
         <div class="hero-actions">
           <a href="#order" class="btn btn-primary">Create my video</a>
           <a href="#examples" class="btn btn-ghost">See examples</a>
         </div>
         <div class="hero-stats">
-          <div><strong>2 days</strong><span>minimum turnaround</span></div>
-          <div><strong>€40–60</strong><span>depending on length</span></div>
+          <div><strong>3 days</strong><span>minimum turnaround</span></div>
+          <div><strong>€55</strong><span>single flat price</span></div>
           <div><strong>2 revisions</strong><span>included</span></div>
         </div>
       </div>
@@ -84,7 +84,7 @@
       </div>
       <div class="grid grid-4">
         <div class="card step-card"><div class="num">1</div><h3>You send your request</h3><p>Story, mood — no photo, no personal data needed at this stage.</p></div>
-        <div class="card step-card"><div class="num">2</div><h3>I get back to you within 24h</h3><p>Together we refine the storyline, length and exact price.</p></div>
+        <div class="card step-card"><div class="num">2</div><h3>I get back to you within 24h</h3><p>Together we refine the storyline, the style and the concept of your video.</p></div>
         <div class="card step-card"><div class="num">3</div><h3>You pay & send 3 photos</h3><p>A secure payment link, then 3 good-quality photos.</p></div>
         <div class="card step-card"><div class="num">4</div><h3>You receive your video</h3><p>Matching the approved storyline — 2 rounds of revisions included.</p></div>
       </div>
@@ -96,25 +96,27 @@
     <div class="container">
       <div class="section-head">
         <div class="eyebrow" style="justify-content:center">Formats & styles</div>
-        <h2>Pick the length, the style fits the story</h2>
-        <p>Three visual styles, two lengths. Transparent pricing — calculate it below.</p>
+        <h2>One flat price, the style fits the story</h2>
+        <p>Three visual styles, a one-minute video, one clear price — no options, no extras.</p>
       </div>
       <div class="grid grid-3" style="margin-bottom:40px">
         <div class="tile"><div class="tile-media"><img src="../assets/styles/realiste.jpg" alt="Realistic (film) style example" loading="lazy"></div><div class="tile-body"><h3>Realistic (film)</h3></div></div>
         <div class="tile"><div class="tile-media"><img src="../assets/styles/animation.jpg" alt="Animated style example" loading="lazy"></div><div class="tile-body"><h3>Animated</h3></div></div>
         <div class="tile"><div class="tile-media"><img src="../assets/styles/manga.jpg" alt="Manga style example" loading="lazy"></div><div class="tile-body"><h3>Manga</h3></div></div>
       </div>
-      <div class="calc" data-calc>
+      <div class="calc">
         <div>
-          <h3 style="margin-bottom:16px;color:var(--text-0)">Calculate your video's price</h3>
-          <div class="calc-options">
-            <label><input type="radio" name="calc-duration" value="60" checked><span>1 minute</span></label>
-            <label><input type="radio" name="calc-duration" value="120"><span>2 minutes</span></label>
-          </div>
+          <h3 style="margin-bottom:12px;color:var(--text-0)">Personalized video — 1 minute</h3>
+          <ul class="calc-points">
+            <li>Length: 1 minute</li>
+            <li>Sound design included</li>
+            <li>2 rounds of revisions included</li>
+            <li>Minimum turnaround: 3 days</li>
+          </ul>
         </div>
         <div class="calc-price">
-          <strong data-calc-price>€40</strong>
-          <span>audio included</span>
+          <strong>€55</strong>
+          <span>flat price, all included</span>
         </div>
       </div>
     </div>
@@ -162,16 +164,85 @@
         <h2>What NAVIA can create for you</h2>
       </div>
 
-      <div class="portfolio-feature">
-        <div>
-          <span class="tag">Birthday</span><span class="tag">Realistic</span>
-          <h3 style="margin-bottom:10px">From a single photo to a living memory</h3>
-          <p style="color:var(--text-1);font-size:.95rem">Starting from a simple photo, a video that puts the day's hero center stage — here, a birthday message made for a grandfather.</p>
-        </div>
-        <video src="../assets/portfolio/exemple-01.mp4" controls preload="metadata"></video>
+      <p class="section-note">Click a video or a source photo to open it full size.</p>
+
+      <div class="pf-row">
+
+        <!-- Example 1 — vertical 9:16 -->
+        <article class="pf-card pf-card-v">
+          <button type="button" class="pf-media ratio-v" data-lightbox="video" data-src="../assets/portfolio/exemple-01.mp4" aria-label="Play the video: growing good, in every era">
+            <video src="../assets/portfolio/exemple-01.mp4#t=0.1" muted playsinline preload="metadata"></video>
+            <span class="pf-play" aria-hidden="true"></span>
+            <span class="pf-ratio">9:16</span>
+          </button>
+          <div class="pf-body">
+            <div class="pf-tags"><span class="tag">Birthday</span><span class="tag">Historical scenes</span></div>
+            <h3>Growing good, in every era</h3>
+            <dl class="pf-meta">
+              <div><dt>Brief</dt><dd>A birthday video for a man, ordered by his wife and children.</dd></div>
+              <div><dt>The hero</dt><dd>A forester for many years, now retired and devoted to his vegetable garden. Curious about science and history, surrounded by friends and former colleagues who value his generosity and his readiness to help.</dd></div>
+              <div><dt>Key idea</dt><dd>A man who grows good, in every situation and every era.</dd></div>
+              <div><dt>Concept</dt><dd>Historical scenes, chosen around his own interests.</dd></div>
+              <div><dt>Format</dt><dd>1 minute · royalty-free audio</dd></div>
+            </dl>
+            <button type="button" class="pf-source" data-lightbox="image" data-src="../assets/portfolio/exemple-01-photo.jpg" aria-label="View the source photo of example 1">
+              <img src="../assets/portfolio/exemple-01-photo.jpg" alt="Source photo used for example 1" loading="lazy">
+              <span>Source photo</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Example 3 — vertical 9:16 — TODO: add exemple-03.mp4 / exemple-03-photo.jpg and replace the texts -->
+        <article class="pf-card pf-card-v">
+          <button type="button" class="pf-media ratio-v" data-lightbox="video" data-src="../assets/portfolio/exemple-03.mp4" aria-label="Play the video: third example">
+            <video src="../assets/portfolio/exemple-03.mp4#t=0.1" muted playsinline preload="metadata"></video>
+            <span class="pf-play" aria-hidden="true"></span>
+            <span class="pf-ratio">9:16</span>
+          </button>
+          <div class="pf-body">
+            <div class="pf-tags"><span class="tag">Occasion</span><span class="tag">Style</span></div>
+            <h3>Third example title</h3>
+            <dl class="pf-meta">
+              <div><dt>Brief</dt><dd>To be completed.</dd></div>
+              <div><dt>The hero</dt><dd>To be completed.</dd></div>
+              <div><dt>Key idea</dt><dd>To be completed.</dd></div>
+              <div><dt>Concept</dt><dd>To be completed.</dd></div>
+              <div><dt>Format</dt><dd>1 minute · royalty-free audio</dd></div>
+            </dl>
+            <button type="button" class="pf-source" data-lightbox="image" data-src="../assets/portfolio/exemple-03-photo.jpg" aria-label="View the source photo of example 3">
+              <img src="../assets/portfolio/exemple-03-photo.jpg" alt="Source photo used for example 3" loading="lazy">
+              <span>Source photo</span>
+            </button>
+          </div>
+        </article>
+
       </div>
 
-      <p class="placeholder-note">More examples (animated & manga styles, other occasions) will be added as new projects come in.</p>
+      <!-- Example 2 — horizontal 16:9 -->
+      <article class="pf-card pf-card-h">
+        <button type="button" class="pf-media ratio-h" data-lightbox="video" data-src="../assets/portfolio/exemple-02.mp4" aria-label="Play the video: dreaming a project bigger than yourself">
+          <video src="../assets/portfolio/exemple-02.mp4#t=0.1" muted playsinline preload="metadata"></video>
+          <span class="pf-play" aria-hidden="true"></span>
+          <span class="pf-ratio">16:9</span>
+        </button>
+        <div class="pf-body">
+          <div class="pf-tags"><span class="tag">Introduction</span><span class="tag">Dream project</span></div>
+          <h3>Dreaming a project bigger than yourself</h3>
+          <dl class="pf-meta">
+            <div><dt>Brief</dt><dd>My introduction video, for this site and for my clients — nice to meet you!</dd></div>
+            <div><dt>The hero</dt><dd>Me. I'm at architecture school: I love imagining ambitious building or renovation projects. AI replaces neither the engineering nor the budget, but it gives the idea a picture — something to really talk about.</dd></div>
+            <div><dt>Key idea</dt><dd>Someone who can dream, and believe an ambitious project can happen.</dd></div>
+            <div><dt>Concept</dt><dd>Visualizing a big project still at the idea stage, or a dream. If the person you're ordering for has one, this concept can be a real source of inspiration.</dd></div>
+            <div><dt>Format</dt><dd>1 minute · royalty-free audio</dd></div>
+          </dl>
+          <button type="button" class="pf-source" data-lightbox="image" data-src="../assets/portfolio/exemple-02-photo.jpg" aria-label="View the source photo of example 2">
+            <img src="../assets/portfolio/exemple-02-photo.jpg" alt="Source photo used for example 2" loading="lazy">
+            <span>Source photo</span>
+          </button>
+        </div>
+      </article>
+
+      <p class="section-note section-note-end">If you agree to let your video appear as an example on this page, you get a 10% discount on your order.</p>
     </div>
   </section>
 
@@ -277,13 +348,9 @@
 
           <!-- STEP 3 -->
           <div class="step">
-            <div class="field">
-              <label class="field-label">Desired length</label>
-              <div class="choice-grid">
-                <label class="choice"><input type="radio" name="duration" value="60" required><span class="box"></span> 1 min — €40</label>
-                <label class="choice"><input type="radio" name="duration" value="120"><span class="box"></span> 2 min — €60</label>
-              </div>
-              <p class="hint">Estimate: <strong data-form-price>—</strong> (confirmed before payment)</p>
+            <div class="price-note">
+              <strong>One-minute video — €55</strong>
+              <span>Flat price: sound design and 2 rounds of revisions included. Minimum turnaround: 3 days.</span>
             </div>
             <div class="field">
               <label class="field-label">Visual style</label>
@@ -308,25 +375,17 @@
               <input type="text" name="feelings_other" placeholder="Other feeling (optional)" style="margin-top:12px">
             </div>
             <div class="field">
-              <label class="field-label">Concept — everyday life scenes (multiple choice)</label>
-              <div class="choice-grid">
-                <label class="choice"><input type="checkbox" name="concept" value="With family"><span class="box"></span> With family</label>
-                <label class="choice"><input type="checkbox" name="concept" value="At work"><span class="box"></span> At work</label>
-                <label class="choice"><input type="checkbox" name="concept" value="On holiday"><span class="box"></span> On holiday</label>
-                <label class="choice"><input type="checkbox" name="concept" value="Favorite hobby"><span class="box"></span> Favorite hobby</label>
+              <label class="field-label">Video concept (pick one)</label>
+              <div class="choice-grid choice-grid-wide">
+                <label class="choice"><input type="radio" name="concept" value="Real-life scenes" required><span class="box"></span> <span>Real-life scenes<em>Hobbies, travel, work, projects, family life…</em></span></label>
+                <label class="choice"><input type="radio" name="concept" value="Historical / fantasy scenes"><span class="box"></span> <span>Historical / fantasy scenes<em>Scenes from the past, imagined worlds or a dreamed-up future.</em></span></label>
+                <label class="choice"><input type="radio" name="concept" value="Another concept"><span class="box"></span> <span>Another concept<em>Your own idea — describe it below.</em></span></label>
               </div>
             </div>
             <div class="field">
-              <label class="field-label">Concept — historical scenes (multiple choice)</label>
-              <div class="choice-grid">
-                <label class="choice"><input type="checkbox" name="concept" value="Past"><span class="box"></span> Past</label>
-                <label class="choice"><input type="checkbox" name="concept" value="Present"><span class="box"></span> Present</label>
-                <label class="choice"><input type="checkbox" name="concept" value="Future"><span class="box"></span> Future</label>
-              </div>
-            </div>
-            <div class="field">
-              <label class="field-label" for="concept-other">Another concept idea</label>
-              <textarea id="concept-other" name="concept_other" placeholder="Describe your idea freely"></textarea>
+              <label class="field-label" for="concept-wishes">Your wishes for the video concept</label>
+              <textarea id="concept-wishes" name="concept_wishes" placeholder="Places, eras, situations, details you'd like to see…"></textarea>
+              <p class="hint">This field stays available whichever concept you pick.</p>
             </div>
           </div>
           <div class="form-nav"><button type="button" class="btn btn-ghost" data-prev>Back</button><button type="button" class="btn btn-primary" data-next>Next</button></div>
@@ -374,11 +433,11 @@
       <div style="max-width:760px;margin:0 auto">
         <div class="faq-item">
           <button class="faq-q">How long does it take?<span class="plus">+</span></button>
-          <div class="faq-a"><p>The minimum turnaround is 2 days. I recommend ordering at least a week in advance to leave enough time to exchange details and approve the result together.</p></div>
+          <div class="faq-a"><p>The minimum turnaround is 3 days. I recommend ordering at least a week in advance to leave enough time to exchange details and approve the result together.</p></div>
         </div>
         <div class="faq-item">
           <button class="faq-q">Can I order any storyline?<span class="plus">+</span></button>
-          <div class="faq-a"><p>No — I don't accept subjects related to politics, violence or intimate content.</p></div>
+          <div class="faq-a"><p>Almost. Any idea or concept you bring is welcome — and if you'd rather leave the creative side to me, I'll gladly come up with the storyline myself, based on the answers in your questionnaire. Just note that I don't work on subjects related to politics, intimacy or violence.</p></div>
         </div>
         <div class="faq-item">
           <button class="faq-q">Where is my data stored?<span class="plus">+</span></button>
@@ -386,7 +445,7 @@
         </div>
         <div class="faq-item">
           <button class="faq-q">I don't like the video, can I get a refund?<span class="plus">+</span></button>
-          <div class="faq-a"><p>AI doesn't guarantee a perfect match with a person's looks or expressions. Every video takes hours of work, creative input, and several paid tool subscriptions. If the video matches the approved storyline and length, no refund is possible in case of simple aesthetic disappointment. To reduce this risk, please review the examples and their source photos before ordering.</p></div>
+          <div class="faq-a"><p>AI doesn't guarantee a perfect match with a person's looks or expressions. To keep that risk as low as possible, I work in two stages. Before producing the full video, I send you 2 images and a first scene of up to 6 seconds, matching the agreed storyline — with 2 rounds of revisions available at this stage. If after those revisions the result still doesn't meet your expectations, the order is cancelled and fully refunded.</p><p>If you approve that first stage, I produce the full version, which can then be corrected twice. From that point on the amount is non-refundable: every project takes hours of work, creative input and several paid tool subscriptions. You can also review the examples and their source photos before ordering.</p></div>
         </div>
       </div>
     </div>
@@ -432,6 +491,11 @@
 </footer>
 
 <a href="https://wa.me/33769017074" class="wa-float" target="_blank" rel="noopener" aria-label="Message us on WhatsApp">💬</a>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Preview">
+  <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
+  <div class="lightbox-inner"></div>
+</div>
 
 <script src="../js/main.js"></script>
 </body>
