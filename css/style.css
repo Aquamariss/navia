@@ -393,6 +393,10 @@ footer{border-top:1px solid var(--border);padding:60px 0 30px;margin-top:40px}
 .legal-page p,.legal-page li{color:var(--text-1);font-size:.96rem;margin-bottom:12px}
 .legal-page li{margin-left:20px}
 .legal-page a{color:var(--violet);text-decoration:underline}
+/* buttons must keep their own colour: .legal-page a outranks .btn-primary */
+.legal-page a.btn{text-decoration:none;font-weight:600}
+.legal-page a.btn-primary{color:#fff}
+.legal-page a.btn-ghost{color:var(--text-0)}
 
 /* comparison tables inside articles */
 .legal-page table{width:100%;border-collapse:collapse;margin:20px 0;font-size:.94rem}
