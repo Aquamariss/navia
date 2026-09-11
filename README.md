@@ -15,8 +15,10 @@ navia/
     legal-notice.html
     privacy-policy.html
     terms-of-sale.html
+  articles/               ← статьи (FR)
   css/style.css
   js/main.js
+  js/analytics.js         ← события для Umami (время, скролл, клики)
   assets/
     logo.svg
     portfolio/exemple-01.mp4  + exemple-01-photo.jpg   (9:16)
@@ -72,3 +74,30 @@ WhatsApp-уведомления автоматически не приходят
 ## Форма и антиспам
 
 Форма использует honeypot-поле (`bot-field`) — скрытое от людей, но видимое ботам, для базовой защиты от спама без капчи.
+
+## Аналитика посещений (Umami, без cookie)
+
+Счётчик подключён на всех страницах. Он не ставит cookie, не собирает персональных
+данных и не требует баннера согласия — политика конфиденциальности обновлена (раздел 9).
+
+Аккаунт: [cloud.umami.is](https://cloud.umami.is), сайт `navia-production.com`,
+`data-website-id` уже подставлен во все страницы.
+
+Атрибут `data-domains="navia-production.com"` означает, что статистика пишется
+только с боевого домена — локальные открытия и превью-деплои Netlify в отчёты не попадают.
+
+### Какие события отправляются
+
+| Событие | Что означает |
+|---|---|
+| `time-15s` … `time-300s` | сколько человек реально пробыл на странице (только активная вкладка) |
+| `scroll-25` … `scroll-100` | до какой части страницы долистал |
+| `view-tarifs`, `view-exemples`, `view-commande`, … | какие секции увидел |
+| `cta-order`, `cta-examples` | клики по кнопкам «Créer ma vidéo» / «Voir des exemples» |
+| `click-whatsapp`, `click-email` | клики по контактам (в параметре `zone` — шапка, футер, плавающая кнопка) |
+| `example-open` | открыл видео или исходное фото в галерее |
+| `faq-open` | раскрыл вопрос в FAQ (в параметре — сам вопрос) |
+| `form-start`, `form-step-2` … `form-step-5` | воронка формы заказа по шагам |
+| `order-sent`, `order-error` | заявка успешно отправлена / ошибка отправки |
+
+Главная воронка в дашборде: просмотры → `view-commande` → `form-start` → `order-sent`.

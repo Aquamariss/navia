@@ -118,11 +118,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = new FormData(form);
       fetch('/', { method: 'POST', body: new URLSearchParams(data).toString(), headers: { 'Content-Type': 'application/x-www-form-urlencoded' } })
         .then(() => {
+          if (window.naviaTrack) window.naviaTrack('order-sent');
           form.style.display = 'none';
           document.querySelector('.progress-track')?.style.setProperty('display', 'none');
           document.querySelector('.form-success').classList.add('active');
         })
         .catch(() => {
+          if (window.naviaTrack) window.naviaTrack('order-error');
           if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = form.dataset.submitLabel || 'Envoyer'; }
           alert(form.dataset.errorMsg || 'Une erreur est survenue, merci de réessayer ou de nous écrire directement.');
         });
