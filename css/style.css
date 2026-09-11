@@ -394,6 +394,16 @@ footer{border-top:1px solid var(--border);padding:60px 0 30px;margin-top:40px}
 .legal-page li{margin-left:20px}
 .legal-page a{color:var(--violet);text-decoration:underline}
 
+/* comparison tables inside articles */
+.legal-page table{width:100%;border-collapse:collapse;margin:20px 0;font-size:.94rem}
+.legal-page th,.legal-page td{padding:10px 14px;border:1px solid var(--border);text-align:left;vertical-align:top}
+.legal-page thead th{background:var(--bg-2);color:var(--text-0);font-weight:600}
+.legal-page tbody td:first-child{color:var(--text-0);font-weight:500}
+.legal-page ol{margin-bottom:12px}
+.legal-page ol li{margin-left:20px;color:var(--text-1);font-size:.96rem;margin-bottom:12px}
+.legal-page .card h2 a{text-decoration:none}
+.legal-page .card h2 a:hover{text-decoration:underline}
+
 /* ---------- whatsapp float ---------- */
 .wa-float{
   position:fixed;bottom:22px;right:22px;z-index:200;
