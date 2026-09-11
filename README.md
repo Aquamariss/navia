@@ -45,7 +45,7 @@ navia/
 
 1. В панели Netlify → ваш сайт → **Forms**.
 2. Откроются формы `commande` (FR) и `order-en` (EN) — они появятся автоматически после первой отправки или после деплоя.
-3. Site settings → Forms → **Form notifications** → Add notification → **Email notification** → указать `i.dubrovko@gmail.com`.
+3. Site settings → Forms → **Form notifications** → Add notification → **Email notification** → указать `naviaproduction@gmail.com`.
 4. Готово: при каждой заявке будет приходить письмо со всеми ответами анкеты.
 
 WhatsApp-уведомления автоматически не приходят (это было ваше осознанное решение — см. кнопку Click-to-WhatsApp на сайте). Если позже захотите автоматическую пересылку заявок в WhatsApp, это можно сделать через Zapier/Make, подключённый к вебхуку Netlify Forms — отдельная задача, которую можно решить позже.
