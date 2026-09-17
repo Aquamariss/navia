@@ -3,6 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) — Consent Mode v2 : publicité refusée par défaut -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function () {
+    var ok = false;
+    try {
+      var c = JSON.parse(localStorage.getItem('navia-consent') || 'null');
+      ok = !!c && c.ads === true && c.expires > Date.now();
+    } catch (e) {}
+    gtag('consent', 'default', {
+      ad_storage:           ok ? 'granted' : 'denied',
+      ad_user_data:         ok ? 'granted' : 'denied',
+      ad_personalization:   ok ? 'granted' : 'denied',
+      analytics_storage:    'denied',
+      functionality_storage:'granted',
+      security_storage:     'granted',
+      wait_for_update: 500
+    });
+  })();
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+  gtag('js', new Date());
+  gtag('config', 'AW-18443303177');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18443303177"></script>
 <title>Combien coûte une vidéo IA personnalisée ? — NAVIA</title>
 <meta name="description" content="Le prix d'une vidéo IA sur mesure, ce qui le fait varier, et ce que coûte réellement la version « gratuite ». Chez NAVIA : 55 €, une minute, 3 jours.">
 <link rel="canonical" href="https://navia-production.com/articles/combien-coute-une-video-ia-personnalisee.html">
@@ -87,6 +113,7 @@
 
 <!-- Umami — cookieless audience measurement -->
 <script defer src="https://cloud.umami.is/script.js" data-website-id="39aab16a-fd2b-48a6-bdbc-fcffa16c4f5c" data-domains="navia-production.com"></script>
+<script defer src="../js/consent.js"></script>
 <script defer src="../js/analytics.js"></script>
 </head>
 <body>

@@ -3,6 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) — Consent Mode v2 : publicité refusée par défaut -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function () {
+    var ok = false;
+    try {
+      var c = JSON.parse(localStorage.getItem('navia-consent') || 'null');
+      ok = !!c && c.ads === true && c.expires > Date.now();
+    } catch (e) {}
+    gtag('consent', 'default', {
+      ad_storage:           ok ? 'granted' : 'denied',
+      ad_user_data:         ok ? 'granted' : 'denied',
+      ad_personalization:   ok ? 'granted' : 'denied',
+      analytics_storage:    'denied',
+      functionality_storage:'granted',
+      security_storage:     'granted',
+      wait_for_update: 500
+    });
+  })();
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+  gtag('js', new Date());
+  gtag('config', 'AW-18443303177');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18443303177"></script>
 <title>NAVIA — Personalized AI Videos for Birthdays & Special Occasions</title>
 <meta name="description" content="Give a custom AI video for a birthday, wedding, or retirement. You send an idea and photos, NAVIA handles everything else — delivered within 3 days.">
 <link rel="canonical" href="https://navia-production.com/en/">
@@ -281,8 +307,9 @@
       "@id": "https://navia-production.com/en/#video-01",
       "name": "Growing good, in every era",
       "description": "Brief : A birthday video for a man, ordered by his wife and children. The hero : A forester for many years, now retired and devoted to his vegetable garden. Curious about science and history, surrounded by friends and former colleagues who value his generosity and his readiness to help. Key idea : A man who grows good, in every situation and every era. Concept : Historical scenes, chosen around his own interests. Format : 1 minute · royalty-free audio",
-      "contentUrl": "https://navia-production.com/assets/portfolio/exemple-01.mp4",
-      "thumbnailUrl": "https://navia-production.com/assets/portfolio/exemple-01-photo.jpg",
+      "embedUrl": "https://www.youtube.com/embed/vQZdULWq4o0",
+      "url": "https://www.youtube.com/watch?v=vQZdULWq4o0",
+      "thumbnailUrl": "https://navia-production.com/assets/portfolio/exemple-01-preview.jpg",
       "uploadDate": "2026-07-25",
       "duration": "PT1M",
       "inLanguage": "en-GB",
@@ -299,8 +326,9 @@
       "@id": "https://navia-production.com/en/#video-02",
       "name": "Dreaming a project bigger than yourself",
       "description": "Brief : My introduction video, for this site and for my clients — nice to meet you! The hero : Me. I'm at architecture school: I love imagining ambitious building or renovation projects. AI replaces neither the engineering nor the budget, but it gives the idea a picture — something to really talk about. Key idea : Someone who can dream, and believe an ambitious project can happen. Concept : Visualizing a big project still at the idea stage, or a dream. If the person you're ordering for has one, this concept can be a real source of inspiration. Format : 1 minute · royalty-free audio",
-      "contentUrl": "https://navia-production.com/assets/portfolio/exemple-02.mp4",
-      "thumbnailUrl": "https://navia-production.com/assets/portfolio/exemple-02-photo.jpg",
+      "embedUrl": "https://www.youtube.com/embed/JZKAfjNY8yg",
+      "url": "https://www.youtube.com/watch?v=JZKAfjNY8yg",
+      "thumbnailUrl": "https://navia-production.com/assets/portfolio/exemple-02-preview.jpg",
       "uploadDate": "2026-08-30",
       "duration": "PT50S",
       "inLanguage": "en-GB",
@@ -317,8 +345,9 @@
       "@id": "https://navia-production.com/en/#video-03",
       "name": "Exploring, and making change happen",
       "description": "Brief : A birthday video for a woman, ordered by her friends and colleagues. The hero : A whole career in IT, passionate about AI, robotics and space technology — as a child she dreamed of becoming a cosmonaut. A science-fiction reader and an outdoor runner, she plays the flute, the ukulele and the guitar, and holds on to her friendships and her travels. Key idea : A woman who loves life full and in balance, and takes an active part in it: she explores, she makes change happen. Concept : A mix of futuristic scenes and everyday moments, chosen around her own interests. Format : 1 minute · royalty-free audio",
-      "contentUrl": "https://navia-production.com/assets/portfolio/exemple-03.mp4",
-      "thumbnailUrl": "https://navia-production.com/assets/portfolio/exemple-03-photo.jpg",
+      "embedUrl": "https://www.youtube.com/embed/wSNFr__r_ss",
+      "url": "https://www.youtube.com/watch?v=wSNFr__r_ss",
+      "thumbnailUrl": "https://navia-production.com/assets/portfolio/exemple-03-preview.jpg",
       "uploadDate": "2026-09-05",
       "duration": "PT55S",
       "inLanguage": "en-GB",
@@ -336,6 +365,7 @@
 
 <!-- Umami — cookieless audience measurement -->
 <script defer src="https://cloud.umami.is/script.js" data-website-id="39aab16a-fd2b-48a6-bdbc-fcffa16c4f5c" data-domains="navia-production.com"></script>
+<script defer src="../js/consent.js"></script>
 <script defer src="../js/analytics.js"></script>
 </head>
 <body>
@@ -381,7 +411,7 @@
         </div>
       </div>
       <div class="hero-media">
-        <video src="../assets/portfolio/exemple-01.mp4" muted loop autoplay playsinline></video>
+        <video src="../assets/portfolio/preset.mp4" muted loop autoplay playsinline preload="metadata" poster="../assets/portfolio/hero-poster.jpg"></video>
         <div class="badge-float">🎬 Real example — video made for a birthday</div>
       </div>
     </div>
@@ -500,8 +530,8 @@
 
         <!-- Example 1 — vertical 9:16 -->
         <article class="pf-card pf-card-v">
-          <button type="button" class="pf-media ratio-v" data-lightbox="video" data-src="../assets/portfolio/exemple-01.mp4" aria-label="Play the video: growing good, in every era">
-            <video src="../assets/portfolio/exemple-01.mp4#t=0.1" muted playsinline preload="metadata"></video>
+          <button type="button" class="pf-media ratio-v" data-lightbox="youtube" data-yt="vQZdULWq4o0" aria-label="Play the video: growing good, in every era">
+            <img src="../assets/portfolio/exemple-01-preview.jpg" width="540" height="960" alt="Video preview: growing good, in every era" loading="lazy" decoding="async">
             <span class="pf-play" aria-hidden="true"></span>
             <span class="pf-ratio">9:16</span>
           </button>
@@ -524,8 +554,8 @@
 
         <!-- Example 3 — vertical 9:16 -->
         <article class="pf-card pf-card-v">
-          <button type="button" class="pf-media ratio-v" data-lightbox="video" data-src="../assets/portfolio/exemple-03.mp4" aria-label="Play the video: exploring, and making change happen">
-            <video src="../assets/portfolio/exemple-03.mp4#t=0.1" muted playsinline preload="metadata"></video>
+          <button type="button" class="pf-media ratio-v" data-lightbox="youtube" data-yt="wSNFr__r_ss" aria-label="Play the video: exploring, and making change happen">
+            <img src="../assets/portfolio/exemple-03-preview.jpg" width="540" height="960" alt="Video preview: exploring, and making change happen" loading="lazy" decoding="async">
             <span class="pf-play" aria-hidden="true"></span>
             <span class="pf-ratio">9:16</span>
           </button>
@@ -550,8 +580,8 @@
 
       <!-- Example 2 — horizontal 16:9 -->
       <article class="pf-card pf-card-h">
-        <button type="button" class="pf-media ratio-h" data-lightbox="video" data-src="../assets/portfolio/exemple-02.mp4" aria-label="Play the video: dreaming a project bigger than yourself">
-          <video src="../assets/portfolio/exemple-02.mp4#t=0.1" muted playsinline preload="metadata"></video>
+        <button type="button" class="pf-media ratio-h" data-lightbox="youtube" data-yt="JZKAfjNY8yg" aria-label="Play the video: dreaming a project bigger than yourself">
+          <img src="../assets/portfolio/exemple-02-preview.jpg" width="1280" height="720" alt="Video preview: dreaming a project bigger than yourself" loading="lazy" decoding="async">
           <span class="pf-play" aria-hidden="true"></span>
           <span class="pf-ratio">16:9</span>
         </button>
@@ -624,7 +654,7 @@
         <div class="progress-track"><div class="progress-fill"></div></div>
         <div class="progress-labels"><span data-progress-label>1 / 5</span><span>About 3 minutes</span></div>
 
-        <form id="order-form" name="order-en" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-submit-label="Send my request" data-sending="Sending…" data-error-msg="Something went wrong. Please write to us directly on WhatsApp or by email.">
+        <form id="order-form" name="order-en" method="POST" data-netlify="true" data-success-url="/en/merci" netlify-honeypot="bot-field" data-submit-label="Send my request" data-sending="Sending…" data-error-msg="Something went wrong. Please write to us directly on WhatsApp or by email.">
           <input type="hidden" name="form-name" value="order-en">
           <p class="honeypot"><label>Leave this field empty: <input name="bot-field"></label></p>
 

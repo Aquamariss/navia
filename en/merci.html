@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) — Consent Mode v2 : publicité refusée par défaut -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function () {
+    var ok = false;
+    try {
+      var c = JSON.parse(localStorage.getItem('navia-consent') || 'null');
+      ok = !!c && c.ads === true && c.expires > Date.now();
+    } catch (e) {}
+    gtag('consent', 'default', {
+      ad_storage:           ok ? 'granted' : 'denied',
+      ad_user_data:         ok ? 'granted' : 'denied',
+      ad_personalization:   ok ? 'granted' : 'denied',
+      analytics_storage:    'denied',
+      functionality_storage:'granted',
+      security_storage:     'granted',
+      wait_for_update: 500
+    });
+  })();
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+  gtag('js', new Date());
+  gtag('config', 'AW-18443303177');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18443303177"></script>
+<title>Request sent — NAVIA</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../css/style.css">
+
+<!-- Umami — cookieless audience measurement -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="39aab16a-fd2b-48a6-bdbc-fcffa16c4f5c" data-domains="navia-production.com"></script>
+<script defer src="../js/consent.js"></script>
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <a href="/en/" class="logo"><img src="../assets/logo.svg" alt="NAVIA"> NAVIA</a>
+  </nav>
+</header>
+<main class="legal-page">
+  <div class="container" style="max-width:640px;text-align:center">
+    <div style="font-size:3rem;margin-bottom:16px" aria-hidden="true">✨</div>
+    <h1>Request sent!</h1>
+    <p style="margin-top:16px">I will get back to you within 24h by email or WhatsApp to finalize your project.</p>
+    <p style="margin-top:32px"><a href="/en/" class="btn btn-primary">Back to home</a></p>
+  </div>
+</main>
+<footer>
+  <div class="container footer-bottom" style="border-top:none">
+    <span>© 2026 NAVIA</span>
+    <span><a href="https://wa.me/33769017074" target="_blank" rel="noopener">WhatsApp</a> · <a href="mailto:naviaproduction@gmail.com">naviaproduction@gmail.com</a></span>
+  </div>
+</footer>
+</body>
+</html>

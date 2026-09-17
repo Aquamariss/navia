@@ -3,6 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) — Consent Mode v2 : publicité refusée par défaut -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function () {
+    var ok = false;
+    try {
+      var c = JSON.parse(localStorage.getItem('navia-consent') || 'null');
+      ok = !!c && c.ads === true && c.expires > Date.now();
+    } catch (e) {}
+    gtag('consent', 'default', {
+      ad_storage:           ok ? 'granted' : 'denied',
+      ad_user_data:         ok ? 'granted' : 'denied',
+      ad_personalization:   ok ? 'granted' : 'denied',
+      analytics_storage:    'denied',
+      functionality_storage:'granted',
+      security_storage:     'granted',
+      wait_for_update: 500
+    });
+  })();
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+  gtag('js', new Date());
+  gtag('config', 'AW-18443303177');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18443303177"></script>
 <title>Politique de confidentialité — NAVIA</title>
 <meta name="description" content="Politique de confidentialité de NAVIA : données collectées, durée de conservation, hébergement dans l'UE et vos droits RGPD.">
 <link rel="canonical" href="https://navia-production.com/confidentialite.html">
@@ -25,6 +51,7 @@
 
 <!-- Umami — cookieless audience measurement -->
 <script defer src="https://cloud.umami.is/script.js" data-website-id="39aab16a-fd2b-48a6-bdbc-fcffa16c4f5c" data-domains="navia-production.com"></script>
+<script defer src="js/consent.js"></script>
 <script defer src="js/analytics.js"></script>
 </head>
 <body>
@@ -65,9 +92,15 @@
     <p>Des mesures raisonnables sont mises en œuvre pour protéger vos données contre l'accès non autorisé, la perte ou la divulgation.</p>
 
     <h2>9. Cookies et mesure d'audience</h2>
-    <p>Ce site n'utilise aucun cookie de suivi ni publicitaire, et ne dépose aucun traceur permettant de vous identifier ou de vous suivre d'un site à l'autre.</p>
+
+    <h3>Cookies publicitaires (Google Ads) — soumis à votre consentement</h3>
+    <p>Nous diffusons des annonces via Google Ads. La balise Google Ads est présente sur toutes les pages du site, mais <strong>aucun cookie publicitaire n'est déposé et aucun identifiant n'est lu tant que vous n'avez pas donné votre accord</strong> : le site est configuré avec le Consentement Mode v2 de Google, dont les paramètres <em>ad_storage</em>, <em>ad_user_data</em> et <em>ad_personalization</em> sont refusés par défaut.</p>
+    <p>Un bandeau vous permet d'accepter ou de refuser ces cookies, les deux choix étant proposés au même niveau. Si vous refusez, Google reçoit uniquement des mesures anonymes et agrégées, sans cookie ni identifiant publicitaire (les données de navigation transmises sont par ailleurs expurgées&nbsp;: <em>ads_data_redaction</em>). Si vous acceptez, Google dépose des cookies servant à mesurer si votre visite fait suite à une annonce et si elle a abouti à une demande de devis.</p>
+    <p>Votre choix est conservé dans le stockage local de votre navigateur pendant six mois, puis la question vous est reposée. Vous pouvez le modifier à tout moment via le lien <strong>« Gérer les cookies »</strong> en bas de chaque page, ou en effaçant les données de site de votre navigateur. Le responsable du traitement pour ces cookies est Google Ireland Limited&nbsp;; les données peuvent être transférées aux États-Unis dans le cadre du <em>EU-US Data Privacy Framework</em>. Voir la <a href="https://policies.google.com/technologies/cookies" target="_blank" rel="noopener">politique de Google en matière de cookies</a>.</p>
+
+    <h3>Mesure d'audience (Umami) — sans cookie</h3>
     <p>La fréquentation du site est mesurée avec Umami, un outil de statistiques sans cookie. Sont enregistrées, de manière agrégée : les pages consultées, la page ou le moteur de recherche d'origine, le pays, la langue, le type d'appareil et le navigateur, ainsi que les interactions avec la page (clics sur les boutons, progression dans la lecture, temps passé). Votre adresse IP n'est pas conservée, aucun identifiant publicitaire n'est créé et aucun profil individuel n'est constitué.</p>
-    <p>Ces statistiques servent uniquement à comprendre ce qui intéresse les visiteurs et à améliorer le site. Elles ne sont ni revendues ni transmises à des tiers à des fins commerciales, et sont conservées treize mois au maximum. Cette mesure d'audience étant strictement limitée à l'amélioration du site et ne permettant pas de vous identifier, elle ne requiert pas de consentement préalable. Vous pouvez néanmoins la bloquer à tout moment au moyen d'une extension de blocage de votre navigateur.</p>
+    <p>Ces statistiques servent uniquement à comprendre ce qui intéresse les visiteurs et à améliorer le site. Elles ne sont ni revendues ni transmises à des tiers à des fins commerciales, et sont conservées treize mois au maximum. Cette mesure d'audience étant strictement limitée à l'amélioration du site, sans cookie et ne permettant pas de vous identifier, elle ne requiert pas de consentement préalable et reste active quel que soit votre choix concernant les cookies publicitaires. Vous pouvez néanmoins la bloquer à tout moment au moyen d'une extension de blocage de votre navigateur.</p>
   </div>
 </main>
 <footer>

@@ -1,3 +1,12 @@
 .claude/
 files/
 .DS_Store
+
+# Исходные видео примеров: теперь они на YouTube, с сайта не раздаются.
+# Файлы остаются локально как архив, но в репозиторий и в деплой не идут.
+assets/portfolio/exemple-01.mp4
+assets/portfolio/exemple-02.mp4
+assets/portfolio/exemple-03.mp4
+
+# Черновые озвучки, на сайте не используются
+navia_voix_*.mp3

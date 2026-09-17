@@ -3,6 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) — Consent Mode v2 : publicité refusée par défaut -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function () {
+    var ok = false;
+    try {
+      var c = JSON.parse(localStorage.getItem('navia-consent') || 'null');
+      ok = !!c && c.ads === true && c.expires > Date.now();
+    } catch (e) {}
+    gtag('consent', 'default', {
+      ad_storage:           ok ? 'granted' : 'denied',
+      ad_user_data:         ok ? 'granted' : 'denied',
+      ad_personalization:   ok ? 'granted' : 'denied',
+      analytics_storage:    'denied',
+      functionality_storage:'granted',
+      security_storage:     'granted',
+      wait_for_update: 500
+    });
+  })();
+  gtag('set', 'ads_data_redaction', true);
+  gtag('set', 'url_passthrough', true);
+  gtag('js', new Date());
+  gtag('config', 'AW-18443303177');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18443303177"></script>
 <title>NAVIA — Vidéos IA personnalisées pour anniversaires & occasions spéciales</title>
 <meta name="description" content="Offrez une vidéo IA sur-mesure pour un anniversaire, un mariage ou un départ à la retraite. Vous envoyez une idée et des photos, NAVIA s'occupe de tout le reste — livraison en 3 jours.">
 <link rel="canonical" href="https://navia-production.com/">
@@ -281,8 +307,9 @@
       "@id": "https://navia-production.com/#video-01",
       "name": "Faire pousser le bien, à toutes les époques",
       "description": "Objectif : Une vidéo d'anniversaire pour un homme, commandée par sa femme et ses enfants. Le héros : Forestier pendant des années, aujourd'hui retraité et passionné de potager. Curieux de sciences et d'histoire, entouré d'amis et d'anciens collègues qui apprécient sa générosité et son sens de l'entraide. Idée clé : Un homme qui fait pousser le bien, dans toutes les situations et à toutes les époques. Concept : Scènes historiques, choisies d'après ses centres d'intérêt. Format : 1 minute · audio libre de droits",
-      "contentUrl": "https://navia-production.com/assets/portfolio/exemple-01.mp4",
-      "thumbnailUrl": "https://navia-production.com/assets/portfolio/exemple-01-photo.jpg",
+      "embedUrl": "https://www.youtube.com/embed/vQZdULWq4o0",
+      "url": "https://www.youtube.com/watch?v=vQZdULWq4o0",
+      "thumbnailUrl": "https://navia-production.com/assets/portfolio/exemple-01-preview.jpg",
       "uploadDate": "2026-07-25",
       "duration": "PT1M",
       "inLanguage": "fr-FR",
@@ -299,8 +326,9 @@
       "@id": "https://navia-production.com/#video-02",
       "name": "Rêver un projet plus grand que soi",
       "description": "Objectif : Ma vidéo de présentation, pour ce site et pour mes clients — enchanté ! Le héros : Moi. Je suis en école d'architecture : j'aime imaginer des projets de construction ou de rénovation ambitieux. L'IA ne remplace ni l'ingénierie ni le budget, mais elle donne une image à l'idée — de quoi vraiment en discuter. Idée clé : Quelqu'un qui sait rêver et croire en des projets, même très ambitieux. Concept : La visualisation d'un grand projet encore à l'état d'idée, ou d'un rêve. Si la personne à qui la vidéo est destinée en a un, ce concept peut être une vraie source d'inspiration. Format : 1 minute · audio libre de droits",
-      "contentUrl": "https://navia-production.com/assets/portfolio/exemple-02.mp4",
-      "thumbnailUrl": "https://navia-production.com/assets/portfolio/exemple-02-photo.jpg",
+      "embedUrl": "https://www.youtube.com/embed/JZKAfjNY8yg",
+      "url": "https://www.youtube.com/watch?v=JZKAfjNY8yg",
+      "thumbnailUrl": "https://navia-production.com/assets/portfolio/exemple-02-preview.jpg",
       "uploadDate": "2026-08-30",
       "duration": "PT50S",
       "inLanguage": "fr-FR",
@@ -317,8 +345,9 @@
       "@id": "https://navia-production.com/#video-03",
       "name": "Explorer, et faire bouger les choses",
       "description": "Objectif : Une vidéo d'anniversaire pour une femme, commandée par ses amis et ses collègues. L'héroïne : Toute sa carrière dans l'informatique, passionnée d'IA, de robotique et de technologies spatiales — enfant, elle rêvait d'être cosmonaute. Lectrice de science-fiction, coureuse en pleine nature, elle joue de la flûte, du ukulélé et de la guitare, et tient à ses amitiés et à ses voyages. Idée clé : Une femme qui aime la vie pleine et harmonieuse, et y prend une part active : elle explore, elle fait bouger les choses. Concept : Un mélange de scènes futuristes et de moments du quotidien, choisis d'après ses centres d'intérêt. Format : 1 minute · audio libre de droits",
-      "contentUrl": "https://navia-production.com/assets/portfolio/exemple-03.mp4",
-      "thumbnailUrl": "https://navia-production.com/assets/portfolio/exemple-03-photo.jpg",
+      "embedUrl": "https://www.youtube.com/embed/wSNFr__r_ss",
+      "url": "https://www.youtube.com/watch?v=wSNFr__r_ss",
+      "thumbnailUrl": "https://navia-production.com/assets/portfolio/exemple-03-preview.jpg",
       "uploadDate": "2026-09-05",
       "duration": "PT55S",
       "inLanguage": "fr-FR",
@@ -336,6 +365,7 @@
 
 <!-- Umami — cookieless audience measurement -->
 <script defer src="https://cloud.umami.is/script.js" data-website-id="39aab16a-fd2b-48a6-bdbc-fcffa16c4f5c" data-domains="navia-production.com"></script>
+<script defer src="js/consent.js"></script>
 <script defer src="js/analytics.js"></script>
 </head>
 <body>
@@ -381,7 +411,7 @@
         </div>
       </div>
       <div class="hero-media">
-        <video src="assets/portfolio/exemple-01.mp4" muted loop autoplay playsinline></video>
+        <video src="assets/portfolio/preset.mp4" muted loop autoplay playsinline preload="metadata" poster="assets/portfolio/hero-poster.jpg"></video>
         <div class="badge-float">🎬 Exemple réel — vidéo réalisée pour un anniversaire</div>
       </div>
     </div>
@@ -500,8 +530,8 @@
 
         <!-- Exemple 1 — vertical 9:16 -->
         <article class="pf-card pf-card-v">
-          <button type="button" class="pf-media ratio-v" data-lightbox="video" data-src="assets/portfolio/exemple-01.mp4" aria-label="Lire la vidéo : faire pousser le bien, à toutes les époques">
-            <video src="assets/portfolio/exemple-01.mp4#t=0.1" muted playsinline preload="metadata"></video>
+          <button type="button" class="pf-media ratio-v" data-lightbox="youtube" data-yt="vQZdULWq4o0" aria-label="Lire la vidéo : faire pousser le bien, à toutes les époques">
+            <img src="assets/portfolio/exemple-01-preview.jpg" width="540" height="960" alt="Aperçu de la vidéo : faire pousser le bien, à toutes les époques" loading="lazy" decoding="async">
             <span class="pf-play" aria-hidden="true"></span>
             <span class="pf-ratio">9:16</span>
           </button>
@@ -524,8 +554,8 @@
 
         <!-- Exemple 3 — vertical 9:16 -->
         <article class="pf-card pf-card-v">
-          <button type="button" class="pf-media ratio-v" data-lightbox="video" data-src="assets/portfolio/exemple-03.mp4" aria-label="Lire la vidéo : explorer, et faire bouger les choses">
-            <video src="assets/portfolio/exemple-03.mp4#t=0.1" muted playsinline preload="metadata"></video>
+          <button type="button" class="pf-media ratio-v" data-lightbox="youtube" data-yt="wSNFr__r_ss" aria-label="Lire la vidéo : explorer, et faire bouger les choses">
+            <img src="assets/portfolio/exemple-03-preview.jpg" width="540" height="960" alt="Aperçu de la vidéo : explorer, et faire bouger les choses" loading="lazy" decoding="async">
             <span class="pf-play" aria-hidden="true"></span>
             <span class="pf-ratio">9:16</span>
           </button>
@@ -550,8 +580,8 @@
 
       <!-- Exemple 2 — horizontal 16:9 -->
       <article class="pf-card pf-card-h">
-        <button type="button" class="pf-media ratio-h" data-lightbox="video" data-src="assets/portfolio/exemple-02.mp4" aria-label="Lire la vidéo : rêver un projet plus grand que soi">
-          <video src="assets/portfolio/exemple-02.mp4#t=0.1" muted playsinline preload="metadata"></video>
+        <button type="button" class="pf-media ratio-h" data-lightbox="youtube" data-yt="JZKAfjNY8yg" aria-label="Lire la vidéo : rêver un projet plus grand que soi">
+          <img src="assets/portfolio/exemple-02-preview.jpg" width="1280" height="720" alt="Aperçu de la vidéo : rêver un projet plus grand que soi" loading="lazy" decoding="async">
           <span class="pf-play" aria-hidden="true"></span>
           <span class="pf-ratio">16:9</span>
         </button>

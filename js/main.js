@@ -41,9 +41,28 @@ document.addEventListener('DOMContentLoaded', () => {
       inner.innerHTML = '';
     };
 
-    const openLightbox = (type, src, alt) => {
+    const openLightbox = (type, src, alt, ratio) => {
       inner.innerHTML = '';
       let el;
+      if (type === 'youtube') {
+        /* l'iframe n'est créée qu'ici, au clic : aucune requête vers Google
+           tant que le visiteur n'a pas demandé à voir la vidéo */
+        el = document.createElement('div');
+        el.className = 'yt-wrap' + (ratio === 'h' ? ' ratio-h' : '');
+        const frame = document.createElement('iframe');
+        frame.src = 'https://www.youtube-nocookie.com/embed/' + src +
+                    '?autoplay=1&rel=0&playsinline=1&modestbranding=1';
+        frame.title = alt || '';
+        frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+        frame.allowFullscreen = true;
+        frame.referrerPolicy = 'strict-origin-when-cross-origin';
+        el.appendChild(frame);
+        inner.appendChild(el);
+        lightbox.classList.add('open');
+        document.body.classList.add('no-scroll');
+        closeBtn.focus();
+        return;
+      }
       if (type === 'video') {
         el = document.createElement('video');
         el.controls = true;
@@ -63,7 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('[data-lightbox]').forEach(trigger => {
       trigger.addEventListener('click', () => {
-        openLightbox(trigger.dataset.lightbox, trigger.dataset.src, trigger.getAttribute('aria-label'));
+        const type = trigger.dataset.lightbox;
+        const src = type === 'youtube' ? trigger.dataset.yt : trigger.dataset.src;
+        const ratio = trigger.classList.contains('ratio-h') ? 'h' : 'v';
+        openLightbox(type, src, trigger.getAttribute('aria-label'), ratio);
       });
     });
 
@@ -119,9 +141,9 @@ document.addEventListener('DOMContentLoaded', () => {
       fetch('/', { method: 'POST', body: new URLSearchParams(data).toString(), headers: { 'Content-Type': 'application/x-www-form-urlencoded' } })
         .then(() => {
           if (window.naviaTrack) window.naviaTrack('order-sent');
-          form.style.display = 'none';
-          document.querySelector('.progress-track')?.style.setProperty('display', 'none');
-          document.querySelector('.form-success').classList.add('active');
+          /* short delay so the Umami request leaves before the page unloads */
+          const successUrl = form.dataset.successUrl || '/merci';
+          setTimeout(() => { window.location.href = successUrl; }, 400);
         })
         .catch(() => {
           if (window.naviaTrack) window.naviaTrack('order-error');

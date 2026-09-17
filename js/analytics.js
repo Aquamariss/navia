@@ -124,7 +124,7 @@
     if (media) {
       track('example-open', {
         type: media.dataset.lightbox,
-        item: (media.dataset.src || '').split('/').pop()
+        item: (media.dataset.src || media.dataset.yt || '').split('/').pop()
       });
     }
   }, true); // capture: runs before main.js toggles the FAQ class
