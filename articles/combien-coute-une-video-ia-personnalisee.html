@@ -7,22 +7,27 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  (function () {
-    var ok = false;
-    try {
-      var c = JSON.parse(localStorage.getItem('navia-consent') || 'null');
-      ok = !!c && c.ads === true && c.expires > Date.now();
-    } catch (e) {}
-    gtag('consent', 'default', {
-      ad_storage:           ok ? 'granted' : 'denied',
-      ad_user_data:         ok ? 'granted' : 'denied',
-      ad_personalization:   ok ? 'granted' : 'denied',
-      analytics_storage:    'denied',
-      functionality_storage:'granted',
-      security_storage:     'granted',
-      wait_for_update: 500
-    });
-  })();
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    functionality_storage: 'granted',
+    security_storage: 'granted',
+    wait_for_update: 500
+  });
+  /* visiteur revenu qui a déjà accepté (choix conservé 6 mois) : mise à jour
+     immédiate, avant config, pour ne pas perdre l'attribution de la 1re page */
+  try {
+    var c = JSON.parse(localStorage.getItem('navia-consent') || 'null');
+    if (c && c.ads === true && c.expires > Date.now()) {
+      gtag('consent', 'update', {
+        ad_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted'
+      });
+    }
+  } catch (e) {}
   gtag('set', 'ads_data_redaction', true);
   gtag('set', 'url_passthrough', true);
   gtag('js', new Date());

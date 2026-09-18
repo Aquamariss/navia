@@ -135,8 +135,9 @@
   function init() {
     var saved = read();
     if (saved) {
-      /* le <head> a déjà posé la bonne valeur par défaut ; on la confirme */
-      update(saved.ads);
+      /* le <head> a déjà envoyé la mise à jour pour un choix enregistré :
+         ne pas la renvoyer, sinon Umami compterait un « consent-accept »
+         à chaque page vue */
       addManageLink();
     } else {
       open(null);

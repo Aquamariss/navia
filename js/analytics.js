@@ -102,7 +102,17 @@
     const link = e.target.closest('a[href]');
     if (link) {
       const href = link.getAttribute('href') || '';
-      if (href.indexOf('wa.me') > -1) track('click-whatsapp', { zone: zone(link) });
+      if (href.indexOf('wa.me') > -1) {
+        track('click-whatsapp', { zone: zone(link) });
+        /* Google Ads conversion « clic WhatsApp » — gtag est défini dans le <head> */
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'conversion', {
+            send_to: 'AW-18443303177/OlwqCI_71fwcEInyudpE',
+            value: 1.0,
+            currency: 'EUR'
+          });
+        }
+      }
       else if (href.indexOf('mailto:') === 0) track('click-email', { zone: zone(link) });
       else if (href.indexOf('tel:') === 0) track('click-phone', { zone: zone(link) });
       else if (/#commande$/.test(href)) track('cta-order', { zone: zone(link) });
